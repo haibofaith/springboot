@@ -1,5 +1,7 @@
 package com.faith.begood;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.CommandLineRunner;
@@ -12,6 +14,8 @@ import java.util.Arrays;
 
 @SpringBootApplication
 public class BegoodApplication implements ApplicationRunner,CommandLineRunner{
+
+	private static final Logger logger = LoggerFactory.getLogger(BegoodApplication.class);
 
 	public static void main(String[] args) {
 		SpringApplication.run(BegoodApplication.class, args);
@@ -35,12 +39,15 @@ public class BegoodApplication implements ApplicationRunner,CommandLineRunner{
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
-		System.out.println("Hello World from Application Runner");
+		logger.info("Hello World -----info");
+		logger.debug("Hello World-----debug");
+		logger.error("Hello World-----error");
+//		System.out.println("Hello World from Application Runner");
 	}
 
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println("Hello world from Command Line Runner");
+//		System.out.println("Hello world from Command Line Runner");
 	}
 }
 
