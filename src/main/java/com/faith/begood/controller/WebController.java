@@ -14,4 +14,13 @@ public class WebController {
     public String index() {
         return "index";
     }
+
+    @RequestMapping("/view-products")
+    public String viewProducts() {
+        return "view-products";
+    }
+    @RequestMapping("/add-products")
+    public String addProducts() {
+        return "add-products";
+    }
 }
