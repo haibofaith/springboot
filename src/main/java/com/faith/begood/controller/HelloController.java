@@ -3,6 +3,7 @@ package com.faith.begood.controller;
 import com.faith.begood.entity.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -64,5 +65,13 @@ public class HelloController {
 
         return restTemplate.exchange(
                 "http://localhost:8004/products/"+id, HttpMethod.PUT, entity, String.class).getBody();
+    }
+
+    @Value("${welcometext}")
+    private String welcometext;
+
+    @RequestMapping("/netconfig")
+    public String netconfig() {
+        return welcometext;
     }
 }
