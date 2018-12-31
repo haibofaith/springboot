@@ -14,8 +14,8 @@ import java.io.IOException;
 public class SimpleFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        System.out.println("Remote Host:"+servletRequest.getRemoteHost());
-        System.out.println("Remote Address:"+servletRequest.getRemoteAddr());
+//        System.out.println("Remote Host:"+servletRequest.getRemoteHost());
+//        System.out.println("Remote Address:"+servletRequest.getRemoteAddr());
         filterChain.doFilter(servletRequest, servletResponse);
     }
 }

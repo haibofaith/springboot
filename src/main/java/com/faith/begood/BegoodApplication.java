@@ -1,5 +1,6 @@
 package com.faith.begood;
 
+import de.codecentric.boot.admin.server.config.EnableAdminServer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.ApplicationArguments;
@@ -20,6 +21,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @EnableDiscoveryClient
 @EnableScheduling
 @RefreshScope
+@EnableAdminServer
 public class BegoodApplication implements ApplicationRunner,CommandLineRunner{
 
 	private static final Logger logger = LoggerFactory.getLogger(BegoodApplication.class);
